@@ -3,14 +3,9 @@ import Head from "next/head";
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
 import styles from "../styles/Home.module.css";
-
-const toFahrenheit = (degreeCelsius: number) => {
-  return round(degreeCelsius * 1.8 + 32);
-};
-
-const toCelsius = (degreeFahrenheit: number) => {
-  return round((degreeFahrenheit - 32) / 1.8);
-};
+import { Toggle } from "./component/toggle";
+import { toCelsius, toFahrenheit } from "./constants";
+import { useIsDarkMode } from "./hooks/useDarkMode";
 
 const round = (degree: number) => {
   return Math.round(degree * 10) / 10;
@@ -23,6 +18,7 @@ const format = (targetValue: string, degree: number) => {
 const Home: NextPage = () => {
   const [degreeCelsius, setDegreeCelsius] = useState("");
   const [degreeFahrenheit, setDegreeFahrenheit] = useState("");
+  const [isDarkMode, setIsDarkMode] = useIsDarkMode();
 
   const handleCelsiusInput = (event: ChangeEvent<HTMLInputElement>) => {
     const nextDegree = toFahrenheit(Number(event.target.value));
@@ -44,6 +40,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <Toggle
+          isOn={isDarkMode}
+          onClicked={() => setIsDarkMode(!isDarkMode)}
+        ></Toggle>
         <h1 className={"text-6xl font-bold mb-12"}>Temperature Converter</h1>
         <div className={"flex"}>
           <div className="flex flex-col items-start p-2">
