@@ -27,3 +27,7 @@ Others: Git, Node.js
 ### Typescript
 
 ### Next.js
+
+## memo
+- nodeversions
+- yarn? npm?
