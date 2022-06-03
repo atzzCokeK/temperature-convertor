@@ -1,14 +1,8 @@
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const IS_DARK_MODE = "isDarkMode";
 
-export const useIsDarkMode = (): [
+export const useDarkMode = (): [
   isDarkMode: boolean,
   setDark: (isDarkMode: boolean) => void
 ] => {
@@ -18,8 +12,11 @@ export const useIsDarkMode = (): [
     if (typeof window !== undefined) {
       const value: string | null = localStorage.getItem(IS_DARK_MODE);
       if (value !== null) {
-        setIsDarkModeInternal(JSON.parse(value));
-        console.log(isDarkMode);
+        const isDark = JSON.parse(value);
+        setIsDarkModeInternal(isDark);
+
+        isDark && document.documentElement.classList.add("dark");
+        !isDark && document.documentElement.classList.remove("dark");
       }
     }
   }, [isDarkMode, setIsDarkModeInternal]);
