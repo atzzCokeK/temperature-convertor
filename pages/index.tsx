@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
-import { round, toCelsius, toFahrenheit } from "../constants";
+import { round, toCelsius, toFahrenheit } from "../utils/utils";
 import { useDarkMode } from "../hooks/useDarkMode";
 
 const format = (targetValue: string, degree: number) => {
