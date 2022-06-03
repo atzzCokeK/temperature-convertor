@@ -5,3 +5,7 @@ export const toFahrenheit = (degreeCelsius: number) => {
 export const toCelsius = (degreeFahrenheit: number) => {
   return (degreeFahrenheit - 32) / 1.8;
 };
+
+export const round = (degree: number, digits: number) => {
+  return Math.round(degree * digits) / digits;
+};

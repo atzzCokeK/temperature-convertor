@@ -2,20 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
-import styles from "../styles/Home.module.css";
-import { useDarkMode } from "./hooks/useDarkMode";
-
-const toFahrenheit = (degreeCelsius: number) => {
-  return round(degreeCelsius * 1.8 + 32);
-};
-
-const toCelsius = (degreeFahrenheit: number) => {
-  return round((degreeFahrenheit - 32) / 1.8);
-};
-
-const round = (degree: number) => {
-  return Math.round(degree * 10) / 10;
-};
+import { round, toCelsius, toFahrenheit } from "../constants";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const format = (targetValue: string, degree: number) => {
   return targetValue !== "" ? degree.toString() : targetValue;
@@ -27,13 +15,13 @@ const Home: NextPage = () => {
   const [isDarkMode, setDark] = useDarkMode();
 
   const handleCelsiusInput = (event: ChangeEvent<HTMLInputElement>) => {
-    const nextDegree = toFahrenheit(Number(event.target.value));
+    const nextDegree = round(toFahrenheit(Number(event.target.value)), 100);
     setDegreeCelsius(event.target.value);
     setDegreeFahrenheit(format(event.target.value, nextDegree));
   };
 
   const handleFahrenheitInput = (event: ChangeEvent<HTMLInputElement>) => {
-    const nextDegree = toCelsius(Number(event.target.value));
+    const nextDegree = round(toCelsius(Number(event.target.value)), 100);
     setDegreeFahrenheit(event.target.value);
     setDegreeCelsius(format(event.target.value, nextDegree));
   };
