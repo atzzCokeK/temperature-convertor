@@ -5,7 +5,6 @@ import {
   useEffect,
   useState,
 } from "react";
-import { useLocalStorage } from "./useLocalStorage";
 
 const IS_DARK_MODE = "isDarkMode";
 
