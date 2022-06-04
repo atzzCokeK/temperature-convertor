@@ -12,7 +12,8 @@ This app can convert the temperature in both Celcius as input to Farenheit and F
 
 ## Tec Stack
 
-Language: Typescript, Javascript, CSS. 
+Language: Typescript, Javascript, CSS
+
 Framework: Next.js, Tailwind CSS
 
 ## How to build
