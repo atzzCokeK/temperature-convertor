@@ -14,7 +14,6 @@ This app can convert the temperature in both Celcius as input to Farenheit and F
 
 Language: Typescript, Javascript, CSS
 Framework: Next.js, Tailwind CSS
-Others: Git, Node.js
 
 ## How to build
 
@@ -22,12 +21,19 @@ Others: Git, Node.js
 2. `npm i`
 3. `npm run dev`
 
-## Background
+# What I thought to develop this app
 
-### Typescript
+# Language
+I selected Typescript to develop. I am sure that typed programming is very useful and better at any scale, even if an app is small.
+In my experience, I mainly used Elm which is pure-functional programming language.
 
-### Next.js
+# Framework
 
-## memo
-- nodeversions
-- yarn? npm?
+
+# Design
+-
+
+# How I implement light/dark mode
+- I make the custome hook(useDaekMode.ts) to handle the state(light or dark).
+- I use localstorage to read when this app is initialized, and also set the current state when it's toggled.
+- 
