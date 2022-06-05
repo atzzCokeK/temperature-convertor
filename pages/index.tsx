@@ -1,12 +1,26 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 import { round, toCelsius, toFahrenheit } from "../utils/utils";
 import { useDarkMode } from "../hooks/useDarkMode";
+import { InputDegree } from "../component/InputDegree";
+import { DegreeInfo } from "../Type/Model";
 
 const format = (targetValue: string, degree: number) => {
   return targetValue !== "" ? degree.toString() : targetValue;
+};
+
+const celsius: DegreeInfo = {
+  unitName: "Celsius",
+  unitSymbol: "°C",
+  defaultValue: 0,
+};
+
+const fahrenheit: DegreeInfo = {
+  unitName: "Fahrenheit",
+  unitSymbol: "°F",
+  defaultValue: 0,
 };
 
 const Home: NextPage = () => {
@@ -52,21 +66,13 @@ const Home: NextPage = () => {
           Temperature Converter
         </h1>
         <div className={"flex"}>
-          <div className="flex flex-col items-start p-2">
-            <div className={"text-4xl font-bold mb-4"}>Celsius</div>
-            <div className={"flex"}>
-              <input
-                className={
-                  "text-2xl appearance-none bg-transparent border-b-2 border-gray-400 w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none focus:border-sky-400/80 dark:placeholder-white dark:text-white"
-                }
-                value={degreeCelsius}
-                onChange={handleCelsiusInput}
-                placeholder={"0"}
-                type={"number"}
-              ></input>
-              <span className={"text-4xl font-bold"}>°C</span>
-            </div>
-          </div>
+          <InputDegree
+            unitName={celsius.unitName}
+            unitSymbol={celsius.unitSymbol}
+            placeHolderValue={celsius.defaultValue.toString()}
+            currentValue={degreeCelsius}
+            onChangeHandler={handleCelsiusInput}
+          />
           <div className={"mx-16 flex"}>
             <Image
               src={
@@ -78,21 +84,13 @@ const Home: NextPage = () => {
               height={64}
             ></Image>
           </div>
-          <div className="flex flex-col items-start p-2">
-            <div className={"text-4xl font-bold mb-4"}>Fahrenheit</div>
-            <div className={"flex"}>
-              <input
-                className={
-                  "text-2xl appearance-none bg-transparent border-b-2 border-gray-400 w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none focus:border-rose-400/80 dark:placeholder-white dark:text-white"
-                }
-                value={degreeFahrenheit}
-                onChange={handleFahrenheitInput}
-                placeholder={"32"}
-                type={"number"}
-              ></input>
-              <span className={"text-4xl font-bold"}>°F</span>
-            </div>
-          </div>
+          <InputDegree
+            unitName={fahrenheit.unitName}
+            unitSymbol={fahrenheit.unitSymbol}
+            placeHolderValue={fahrenheit.defaultValue.toString()}
+            currentValue={degreeFahrenheit}
+            onChangeHandler={handleFahrenheitInput}
+          />
         </div>
       </main>
     </div>
