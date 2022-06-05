@@ -69,10 +69,13 @@ const Home: NextPage = () => {
           </div>
           <div className={"mx-16 flex"}>
             <Image
-              src="/equal-icon.svg"
+              src={
+                isDarkMode ? "/equal-icon-white.svg" : "/equal-icon-black.svg"
+              }
+              className={"fill-white"}
               alt="equal"
-              width={48}
-              height={48}
+              width={64}
+              height={64}
             ></Image>
           </div>
           <div className="flex flex-col items-start p-2">
