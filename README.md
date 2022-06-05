@@ -39,11 +39,11 @@ Why I selected Next.js is that it seems very easy and fast to develop. I think i
 
 I mostly used css and scss. But in my team, it is getting hard to maintain solid design in the product. Tailwind-css is easy to implement and use. Negative point is that class name is often too long though.
 
-# Design
+## Design
 
 This test is to make an app that converts input in Celcius to Farenheit. However, I think it is better to convert it also it in Farenheit to Celcius. I try to make my app easy to know both of them are available.
 
-# How I implement light/dark mode
+## Light/Dark mode
 
 - I make the custom hook(useDarkMode.ts) to handle the state(light or dark).
 - I use local-storage to read when this app is initialized, and also set the current state when it's toggled.
