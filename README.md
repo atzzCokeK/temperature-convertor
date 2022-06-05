@@ -1,6 +1,6 @@
 # What is Temperature Converter App
 
-This app can convert the temperature in both Celsius as input to Farenheit and Farenheit as input to Celsius.
+This app can convert the temperature in both Celsius as input to Fahrenheit and Fahrenheit as input to Celsius.
 
 # How to use
 
@@ -42,8 +42,7 @@ I mostly used css and scss. But in my team, it is getting hard to maintain solid
 
 ## Design
 
-This test is to make an app that converts input in 
-cius to Farenheit. However, I think it is better to convert it also it in Farenheit to Celsius. I try to make my app easy to know both of them are available.
+This test is to make an app that converts input in Celsius to Fahrenheit. However, I think it is better to convert it also it in Fahrenheit to Celsius. I try to make my app easy to know both of them are available.
 
 ## Light/Dark mode
 
