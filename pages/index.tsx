@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { ChangeEvent, useMemo, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { round, toCelsius, toFahrenheit } from "../utils/utils";
 import { useDarkMode } from "../hooks/useDarkMode";
-import { InputDegree } from "../component/InputDegree";
+import { InputDegree } from "../components/InputDegree";
 import { DegreeInfo } from "../Type/Type";
 
 const format = (targetValue: string, degree: number) => {
