@@ -5,7 +5,7 @@ import { ChangeEvent, useState } from "react";
 import { round, toCelsius, toFahrenheit } from "../utils/utils";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { InputDegree } from "../components/InputDegree";
-import { DegreeInfo } from "../Type/Type";
+import { DegreeInfo } from "../type/Type";
 
 const format = (targetValue: string, degree: number) => {
   return targetValue !== "" ? degree.toString() : targetValue;
