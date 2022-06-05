@@ -21,6 +21,7 @@ Framework: Next.js, Tailwind CSS
 1. `git clone https://github.com/atzzCokeK/temperature-convertor.git`
 2. `npm i`
 3. `npm run dev`
+4. `access http://localhost:3000/`
 
 # What I thought to develop this app
 
