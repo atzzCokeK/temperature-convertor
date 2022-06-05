@@ -24,17 +24,26 @@ Framework: Next.js, Tailwind CSS
 
 # What I thought to develop this app
 
-# Language
+## Language
+
 I selected Typescript to develop. I am sure that typed programming is very useful and better at any scale, even if an app is small.
 In my experience, I mainly used Elm which is pure-functional programming language.
 
-# Framework
+## Framework
 
+### Next.js
+
+Why I selected Next.js is that it seems very easy and fast to develop. I think it is appropriate for this kind of light app. Especially, I like the point that it doesn't need many configs to build and deploy. And also I have never used Next.js, so this is the very nice opportunity to learn something new.
+
+### Tailwind-css
+
+I mostly used css and scss. But in my team, it is getting hard to maintain solid design in the product. Tailwind-css is easy to implement and use. Negative point is that class name is often too long though.
 
 # Design
--
+
+This test is to make an app that converts input in Celcius to Farenheit. However, I think it is better to convert it also it in Farenheit to Celcius. I try to make my app easy to know both of them are available.
 
 # How I implement light/dark mode
-- I make the custome hook(useDaekMode.ts) to handle the state(light or dark).
-- I use localstorage to read when this app is initialized, and also set the current state when it's toggled.
-- 
+
+- I make the custom hook(useDarkMode.ts) to handle the state(light or dark).
+- I use local-storage to read when this app is initialized, and also set the current state when it's toggled.
